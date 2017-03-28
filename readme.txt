@@ -1,4 +1,4 @@
-=== WP API Menus ===
+=== WP REST API Frontpage ===
 Contributors: mrpharderwijk
 Tags: wp-api, wp-rest-api, rest, api, frontpage, static page, home
 Requires at least: 3.6.0
