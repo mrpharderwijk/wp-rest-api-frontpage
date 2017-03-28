@@ -52,7 +52,7 @@ if ( ! class_exists( 'WP_REST_API_frontpage' ) ) :
      */
     public function register_routes() {
 
-      register_rest_route( self::get_plugin_namespace(), '/frontpage', array(
+      register_rest_route( self::get_api_namespace(), '/frontpage', array(
           array(
             'methods'  => WP_REST_Server::READABLE,
             'callback' => array( $this, 'get_frontpage' )
@@ -66,7 +66,7 @@ if ( ! class_exists( 'WP_REST_API_frontpage' ) ) :
      * Get the frontpage
      *
      * @since  1.0.1
-     * @return array of the frontpage
+     * @return Object of the frontpage (pageObject)
      */
     public static function get_frontpage() {
 
@@ -79,16 +79,12 @@ if ( ! class_exists( 'WP_REST_API_frontpage' ) ) :
       $post = ( $page_id > 0 ) ? get_post( $page_id ) : null;  
 
       // No static frontpage is set
-      if( ! is_a( $post, '\WP_Post' ) )
-          return new \WP_Error( 'wpse-error', 
-             \esc_html__( 'No Static Frontpage', 'wpse' ), [ 'status' => 404 ] );
+      if( ! is_a( $post, 'WP_Post' ) )
+          return new WP_Error( 'wpse-error', 
+             esc_html__( 'No Static Frontpage', 'wpse' ), [ 'status' => 404 ] );
 
       // Response setup
-      $data = [
-          $post
-      ];
-
-      return new \WP_REST_Response( $data, 200 );  
+      return new WP_REST_Response( $post, 200 );
     }
   }
 
