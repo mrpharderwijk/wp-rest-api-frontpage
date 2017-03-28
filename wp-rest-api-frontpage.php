@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WP REST API Frontpage
- * Plugin URI:  https://github.com/
+ * Plugin URI:  https://github.com/mrpharderwijk/wp-rest-api-frontpage
  * Description: Extends WP REST API with WordPress frontpage
  *
  * Version:     1.0.1
@@ -9,7 +9,7 @@
  * Author:      Marnix Harderwijk
  * Author URI:  https://github.com/mrpharderwijk
  *
- * Text Domain: wp-rest-api-static
+ * Text Domain: wp-rest-api-frontpage
  *
  * @package WP_REST_API_frontpage
  */
@@ -45,15 +45,8 @@ if ( ! function_exists ( 'wp_rest_api_frontpage_init' ) ) :
    * @since 1.0.0
    */
   function wp_rest_api_frontpage_init() {
-
-    if ( ! defined( 'JSON_API_VERSION' ) 
-      && ! in_array( 'json-rest-api/plugin.php', get_option( 'active_plugins' ) ) ) {
-      $class = new WP_REST_API_frontpage();
-       add_filter( 'rest_api_init', array( $class, 'register_routes' ) );
-    } else {
-      $class = new WP_REST_API_frontpage();
-      add_filter( 'json_endpoints', array( $class, 'register_routes' ) );
-    }
+    $class = new WP_REST_API_frontpage();
+    add_filter( 'rest_api_init', array( $class, 'register_routes' ) );
   }
 
   add_action( 'init', 'wp_rest_api_frontpage_init' );
