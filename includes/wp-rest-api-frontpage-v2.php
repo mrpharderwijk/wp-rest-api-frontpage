@@ -75,20 +75,17 @@ if ( ! class_exists( 'WP_REST_API_frontpage' ) ) :
       // Get the ID of the static frontpage. If not set it's 0
       $page_id = get_option('page_on_front');
 
-      // If the frontpage is set, it's id shouldn't be 0
+      // If the Frontpage is set, it's id shouldn't be 0
       if ( $page_id > 0 ) {
 
         // Set url for call to retrieve the post, need WP REST API for this
-        $endpoint = get_site_url() . '/index.php/wp-json/wp/v2/pages?id=' . $page_id;
+        $endpoint = get_site_url() . '/index.php/wp-json/wp/v2/pages/' . $page_id;
 
         // Do the actual call to retrieve the pageObject by ID
         $response = file_get_contents($endpoint);
 
         // Decode the output
-        $decode = json_decode($response);
-
-        // Because it is an array we get the first result
-        $output = $decode[0];
+        $output = json_decode($response);
 
       } else {
         $output = null;
