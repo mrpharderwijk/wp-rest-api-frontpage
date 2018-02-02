@@ -88,9 +88,9 @@ if ( ! class_exists( 'WP_REST_API_frontpage' ) ) :
 
       // No static frontpage is set
       if( empty($response) ) {
-        return new WP_Error( 'wpse-error',
+        return new WP_Error( '404', 'wpse-error',
           esc_html__( 'No Static Frontpage set', 'wpse' ),
-          [ 'status' => 404 ] );
+        );
       }
 
       // Return the response
