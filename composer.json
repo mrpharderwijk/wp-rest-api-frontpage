@@ -1,0 +1,23 @@
+{
+    "name": "mrpharderwijk/wp-rest-api-frontpage",
+    "description": "Extends the Wordpress WP REST API with a frontpage endpoint to retrieve the static front page",
+    "type": "wordpress-plugin",
+    "version": "1.0.1",
+    "keywords": ["wordpress", "wp", "rest-api", "wp-api", "wordpress-plugin"],
+    "homepage": "https://github.com/mrpharderwijk/wp-rest-api-frontpage",
+    "license": "GPLv2.0+",
+    "authors": [
+        {
+            "name": "Marnix Harderwijk",
+            "email": "marnix.harderwijk@rocketscience.io",
+            "homepage": "http://marnixharderwijk.com/"
+        }
+    ],
+    "support": {
+      "email": "marnix.harderwijk@rocketscience.io",
+      "issues": "https://github.com/mrpharderwijk/wp-rest-api-frontpage/issues"
+    },
+    "require": {
+      "composer/installers": "~1.0"
+    }
+}
