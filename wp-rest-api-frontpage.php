@@ -4,7 +4,7 @@
  * Plugin URI:  https://github.com/mrpharderwijk/wp-rest-api-frontpage
  * Description: Extends WP REST API with WordPress frontpage
  *
- * Version:     1.0.1
+ * Version:     1.1.0
  *
  * Author:      Marnix Harderwijk
  * Author URI:  https://github.com/mrpharderwijk
